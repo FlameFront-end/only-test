@@ -11,7 +11,7 @@ function App() {
   }
 
   return (
-    <div className="test">
+    <div className="container">
       <div className="wrapper">
         <h1 className="heading">Исторические даты</h1>
         <Circle onActiveDotIndexChange={handleActiveDotIndexChange} />
