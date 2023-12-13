@@ -11,12 +11,10 @@ function App() {
   }
 
   return (
-    <div className="wrapper">
-      <div className="top">
+    <div className="test">
+      <div className="wrapper">
         <h1 className="heading">Исторические даты</h1>
         <Circle onActiveDotIndexChange={handleActiveDotIndexChange} />
-      </div>
-      <div className="container">
         <Slider activeSlider={activeDotIndex} />
       </div>
     </div>

@@ -1,13 +1,9 @@
 .center {
-  position: absolute;
+  margin-top: 215px;
   display: flex;
   flex-direction: column;
   width: 100%;
-  top: 44.44%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  z-index: 50;
+  position: relative;
 
 
   .circle {
@@ -91,7 +87,7 @@
 
   .year {
     position: absolute;
-    top: 48%;
+    top: 45%;
     left: 48%;
     transform: translate(-50%, -50%);
     z-index: -1;
@@ -99,10 +95,9 @@
     display: flex;
     gap: 80px;
 
-    text-align: center;
     font-size: 200px;
     font-weight: 700;
-    line-height: 160px; /* 80% */
+    line-height: 160px;
     letter-spacing: -4px;
 
     .min {
