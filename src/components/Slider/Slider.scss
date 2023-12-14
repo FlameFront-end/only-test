@@ -1,21 +1,13 @@
 .slider-container {
-  max-width: 1080px;
+  position: relative;
+  max-width: 1050px;
   opacity: 1;
   transition: opacity 0.5s ease;
-  margin: 0 auto;
-  margin-bottom: 100px;
+  margin: 0 auto 100px;
   min-height: 150px;
 
   .swiper {
     transition: all .5s ease;
-  }
-
-  .hidden {
-    opacity: 0;
-  }
-
-  .visible {
-    animation: fade-in 0.5s ease;
   }
 
   .year {
@@ -31,6 +23,51 @@
     font-size: 20px;
     line-height: 30px;
   }
+
+  .swiper-button {
+    position: absolute;
+    z-index: 1000;
+
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+    background-color: #FFF;
+    box-shadow: 0 0 15px rgba(56, 119, 238, 0.10);
+
+    opacity: 1;
+    transition: opacity .3s ease;
+
+    svg {
+      width: 5px;
+      height: 10px;
+    }
+
+    &::after, &::before {
+      content: none;
+    }
+
+    .swiper-button-disabled {
+      opacity: 0 !important;
+    }
+
+    .swiper-button-prev {
+      left: -120px;
+    }
+
+    .swiper-button-next {
+      right: -120px;
+    }
+  }
+
+
+  .hidden {
+    opacity: 0;
+  }
+
+  .visible {
+    animation: fade-in 0.5s ease;
+  }
 }
 
 
@@ -43,12 +80,3 @@
     opacity: 1;
   }
 }
-
-.swiper-slide {
-  width: 320px !important;
-}
-
-.swiper-slide-next {
-  width: 420px !important;
-}
-

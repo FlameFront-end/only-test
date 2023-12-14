@@ -1,24 +1,26 @@
-import './App.scss'
 import { useState } from 'react'
+
 import Circle from './components/Circle/Circle.tsx'
 import Slider from './components/Slider/Slider.tsx'
 
+import './App.scss'
+
 function App() {
-  const [activeDotIndex, setActiveDotIndex] = useState(0)
+	const [activeDotIndex, setActiveDotIndex] = useState(0)
 
-  const handleActiveDotIndexChange = (index: number) => {
-    setActiveDotIndex(index)
-  }
+	const handleActiveDotIndexChange = (index: number) => {
+		setActiveDotIndex(index)
+	}
 
-  return (
-    <div className="container">
-      <div className="wrapper">
-        <h1 className="heading">Исторические даты</h1>
-        <Circle onActiveDotIndexChange={handleActiveDotIndexChange} />
-        <Slider activeSlider={activeDotIndex} />
-      </div>
-    </div>
-  )
+	return (
+		<div className='container'>
+			<div className='wrapper'>
+				<h1 className='heading'>Исторические даты</h1>
+				<Circle onActiveDotIndexChange={handleActiveDotIndexChange} />
+				<Slider activeSlider={activeDotIndex} />
+			</div>
+		</div>
+	)
 }
 
 export default App
