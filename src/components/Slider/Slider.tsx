@@ -29,7 +29,7 @@ const Slider: FC<SliderProps> = ({ activeSlider }) => {
 	return (
 		<div className={`slider-container ${swiperVisible ? 'visible' : 'hidden'}`}>
 			<Swiper
-				spaceBetween={40}
+				spaceBetween={80}
 				slidesPerView={3}
 				navigation={{
 					nextEl: '.swiper-button-next',

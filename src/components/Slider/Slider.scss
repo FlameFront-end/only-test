@@ -1,10 +1,11 @@
 .slider-container {
   position: relative;
-  max-width: 1050px;
   opacity: 1;
   transition: opacity 0.5s ease;
-  margin: 0 auto 100px;
+  margin: 0 auto;
   min-height: 150px;
+  padding-left: 80px;
+  padding-right: 80px;
 
   .swiper {
     transition: all .5s ease;
@@ -47,10 +48,6 @@
       content: none;
     }
 
-    .swiper-button-disabled {
-      opacity: 0 !important;
-    }
-
     .swiper-button-prev {
       left: -120px;
     }
@@ -58,8 +55,11 @@
     .swiper-button-next {
       right: -120px;
     }
-  }
 
+    &-disabled {
+      opacity: 0 !important;
+    }
+  }
 
   .hidden {
     opacity: 0;

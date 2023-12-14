@@ -17,8 +17,8 @@ function App() {
 			<div className='wrapper'>
 				<h1 className='heading'>Исторические даты</h1>
 				<Circle onActiveDotIndexChange={handleActiveDotIndexChange} />
-				<Slider activeSlider={activeDotIndex} />
 			</div>
+			<Slider activeSlider={activeDotIndex} />
 		</div>
 	)
 }
