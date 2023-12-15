@@ -103,24 +103,26 @@ const Circle: React.FC<CircleProps> = ({ onActiveDotIndexChange }) => {
 	}, [activeDotIndex])
 
 	return (
-		<div className='center'>
-			<div ref={circleRef} className='circle'>
-				{data.map((_, index) => (
-					<div
-						key={index}
-						ref={element => element && (dotRefs.current[index] = element)}
-						className={`dot ${index === activeDotIndex ? 'active' : ''}`}
-						onClick={() => rotateCircle(index - activeDotIndex)}
-					>
-						<div className='index' data-title={data[activeDotIndex].title}>
-							{index + 1}
+		<div className='circle-wrapper'>
+			<div className='center'>
+				<div ref={circleRef} className='circle'>
+					{data.map((_, index) => (
+						<div
+							key={index}
+							ref={element => element && (dotRefs.current[index] = element)}
+							className={`dot ${index === activeDotIndex ? 'active' : ''}`}
+							onClick={() => rotateCircle(index - activeDotIndex)}
+						>
+							<div className='index' data-title={data[activeDotIndex].title}>
+								{index + 1}
+							</div>
 						</div>
-					</div>
-				))}
-			</div>
-			<div className='year'>
-				<div className='min'>{minYear}</div>
-				<div className='max'>{maxYear}</div>
+					))}
+				</div>
+				<div className='year'>
+					<div className='min'>{minYear}</div>
+					<div className='max'>{maxYear}</div>
+				</div>
 			</div>
 			<div className='circle-bottom'>
 				<div className='count'>
