@@ -56,7 +56,11 @@
     opacity: 1;
     transition: opacity 0.3s ease;
 
-    svg {
+    &.swiper-button-prev {
+      transform: rotate(180deg);
+    }
+
+    img {
       width: 5px;
       height: 10px;
     }

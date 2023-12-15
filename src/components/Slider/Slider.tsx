@@ -3,6 +3,7 @@ import SwiperCore from 'swiper/core'
 import { Navigation, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
+import ArrowSlider from '../../assets/arrow-slider.svg'
 import { data } from '../../data/data.ts'
 
 import './Slider.scss'
@@ -63,27 +64,10 @@ const Slider: FC<SliderProps> = ({ activeSlider }) => {
 			</Swiper>
 			<div className='navigation'>
 				<button className='swiper-button swiper-button-prev'>
-					<svg
-						xmlns='http://www.w3.org/2000/svg'
-						width='8'
-						height='12'
-						viewBox='0 0 8 12'
-						fill='none'
-						transform='rotate(180)'
-					>
-						<path d='M1 1L6 6L1 11' stroke='#3877EE' strokeWidth='2' />
-					</svg>
+					<img src={ArrowSlider} alt='ArrowSlider' />
 				</button>
 				<button className='swiper-button swiper-button-next'>
-					<svg
-						xmlns='http://www.w3.org/2000/svg'
-						width='8'
-						height='12'
-						viewBox='0 0 8 12'
-						fill='none'
-					>
-						<path d='M1 1L6 6L1 11' stroke='#3877EE' strokeWidth='2' />
-					</svg>
+					<img src={ArrowSlider} alt='ArrowSlider' />
 				</button>
 			</div>
 			<div className='custom-pagination'></div>

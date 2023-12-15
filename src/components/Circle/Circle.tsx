@@ -1,6 +1,7 @@
 import gsap from 'gsap'
 import React, { useEffect, useRef, useState } from 'react'
 
+import ArrowCircle from '../../assets/arrow-circle.svg'
 import { data } from '../../data/data.ts'
 
 import './Circle.scss'
@@ -134,38 +135,14 @@ const Circle: React.FC<CircleProps> = ({ onActiveDotIndexChange }) => {
 						onClick={() => rotateCircle(-1)}
 						disabled={activeDotIndex === 0}
 					>
-						<svg
-							xmlns='http://www.w3.org/2000/svg'
-							width='50'
-							height='50'
-							viewBox='0 0 50 50'
-							fill='none'
-						>
-							<path
-								d='M27.4999 18.75L21.2499 25L27.4999 31.25'
-								stroke='#42567A'
-								strokeWidth='2'
-							/>
-						</svg>
+						<img src={ArrowCircle} alt='ArrowCircle' />
 					</button>
 					<button
-						className='btn'
+						className='btn btn-next'
 						onClick={() => rotateCircle(1)}
 						disabled={activeDotIndex === data.length - 1}
 					>
-						<svg
-							xmlns='http://www.w3.org/2000/svg'
-							width='50'
-							height='50'
-							viewBox='0 0 50 50'
-							fill='none'
-						>
-							<path
-								d='M22.5001 18.75L28.7501 25L22.5001 31.25'
-								stroke='#42567A'
-								strokeWidth='2'
-							/>
-						</svg>
+						<img src={ArrowCircle} alt='ArrowCircle' />
 					</button>
 				</div>
 			</div>
