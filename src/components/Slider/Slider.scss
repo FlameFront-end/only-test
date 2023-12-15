@@ -1,50 +1,67 @@
 .slider-container {
   position: relative;
+  min-height: 150px;
+  margin: 0 auto;
+  padding-right: 80px;
+  padding-left: 80px;
   opacity: 1;
   transition: opacity 0.5s ease;
-  margin: 0 auto;
-  min-height: 150px;
-  padding-left: 80px;
-  padding-right: 80px;
 
   .swiper {
-    transition: all .5s ease;
+    transition: all 0.5s ease;
   }
 
   .year {
-    color: #3877EE;
-    font-family: Bebas Neue, sans-serif;
+    color: #3877ee;
     font-size: 25px;
+    font-family: "Bebas Neue", sans-serif;
     line-height: 120%;
   }
 
   .text {
     margin-top: 15px;
-    color: #42567A;
+    color: #42567a;
     font-size: 20px;
     line-height: 30px;
+  }
+
+  .custom-pagination {
+    display: none;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+
+    .swiper-pagination-bullet {
+      width: 6px;
+      height: 6px;
+      background-color: #42567a;
+      opacity: 0.4;
+    }
+
+    .swiper-pagination-bullet-active {
+      opacity: 1;
+    }
   }
 
   .swiper-button {
     position: absolute;
     z-index: 1000;
-
     width: 40px;
     height: 40px;
+    background-color: #fff;
     border-radius: 50%;
-
-    background-color: #FFF;
-    box-shadow: 0 0 15px rgba(56, 119, 238, 0.10);
-
+    box-shadow: 0 0 15px rgb(56 119 238 / 10%);
     opacity: 1;
-    transition: opacity .3s ease;
+    transition: opacity 0.3s ease;
 
     svg {
       width: 5px;
       height: 10px;
     }
 
-    &::after, &::before {
+    &::after,
+    &::before {
       content: none;
     }
 
@@ -70,12 +87,45 @@
   }
 }
 
+@media screen and (max-width: 900px) {
+  .slider-container {
+    padding: 20px 0 0;
+    border-top: 1px solid #c7cdd9;
 
+    .swiper-slide-next,
+    .swiper-slide-prev {
+      opacity: 0.4;
+    }
+
+    .swiper-slide-next {
+      width: 255px !important;
+    }
+
+    .custom-pagination {
+      display: flex;
+    }
+
+    .swiper-button {
+      display: none;
+    }
+
+    .year {
+      font-size: 16px;
+      line-height: 120%;
+    }
+
+    .text {
+      font-size: 14px;
+      line-height: 145%;
+    }
+  }
+}
 
 @keyframes fade-in {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }

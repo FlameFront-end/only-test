@@ -1,44 +1,43 @@
 .center {
-  margin-top: 170px;
-  margin-bottom: 56px;
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
-  position: relative;
-
+  margin-top: 170px;
+  margin-bottom: 56px;
 
   .circle {
     position: relative;
     z-index: 50;
-    margin: 0 auto;
     width: 530px;
     height: 530px;
+    margin: 0 auto;
+    border: 1px solid rgb(66 86 122 / 20%);
     border-radius: 50%;
-    border: 1px solid rgba(66, 86, 122, 0.2);
   }
 
   .dot {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #42567A;
-    border-radius: 50%;
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 0;
+    background-color: #42567a;
+    border-radius: 50%;
     cursor: pointer;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
 
     .index::before {
-      content: attr(data-title);
       position: absolute;
       top: 0;
       left: 50px;
-      color: #42567A;
-      font-size: 20px;
+      color: #42567a;
       font-weight: 700;
+      font-size: 20px;
       line-height: 30px;
       opacity: 1;
-      transition: opacity .3s ease;
+      transition: opacity 0.3s ease;
+      content: attr(data-title);
     }
 
     &:not(.active) .index::before {
@@ -47,9 +46,9 @@
   }
 
   .active {
-    background-color: white;
-    border: 1px solid #42567A;
     font-size: 20px;
+    background-color: white;
+    border: 1px solid #42567a;
   }
 
   .circle-bottom {
@@ -60,23 +59,21 @@
   }
 
   .btn-block {
-    margin-top: 20px;
     display: flex;
-    align-items: center;
     gap: 20px;
+    align-items: center;
+    margin-top: 20px;
   }
 
   .btn {
-    width: 50px;
-    height: 50px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
+    width: 50px;
+    height: 50px;
+    border: 1px solid #42567a;
     border-radius: 50%;
-    border: 1px solid #42567A;
-    transition: opacity .3s ease;
+    transition: opacity 0.3s ease;
   }
 
   .btn:disabled {
@@ -85,31 +82,76 @@
   }
 
   .count {
-    color: #42567A;
+    color: #42567a;
   }
 
   .year {
     position: absolute;
     top: 45%;
     left: 48%;
-    transform: translate(-50%, -50%);
-
     display: flex;
     gap: 80px;
-
-    font-size: 200px;
     font-weight: 700;
+    font-size: 200px;
     line-height: 160px;
     letter-spacing: -4px;
+    transform: translate(-50%, -50%);
+
+    @media screen and (max-width: 1000px) {
+      font-size: 150px;
+    }
 
     .min {
-      color: #5D5FEF;
+      color: #5d5fef;
     }
 
     .max {
-      color: #EF5DA8;
+      color: #ef5da8;
     }
   }
 
+  @media screen and (max-width: 1000px) {
+    .year {
+      font-size: 150px;
+    }
+  }
 
+  @media screen and (max-width: 760px) {
+    position: static;
+    align-items: center;
+    margin: 0;
+
+    .year {
+      position: static;
+      gap: 30px;
+      margin: 56px 0;
+      font-weight: 700;
+      font-size: 56px;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: -1.12px;
+      transform: none;
+    }
+
+    .circle {
+      display: none;
+    }
+
+    .circle-bottom {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      margin-left: 0;
+
+      .btn-block {
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .btn {
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
 }

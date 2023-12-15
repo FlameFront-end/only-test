@@ -1,13 +1,17 @@
 import { FC, useEffect, useState } from 'react'
-import { Navigation } from 'swiper/modules'
+import SwiperCore from 'swiper/core'
+import { Navigation, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import { data } from '../../data.ts'
+import { data } from '../../data/data.ts'
 
 import './Slider.scss'
 
 import 'swiper/css'
 import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+
+SwiperCore.use([Navigation, Pagination])
 
 interface SliderProps {
 	activeSlider: number
@@ -29,13 +33,25 @@ const Slider: FC<SliderProps> = ({ activeSlider }) => {
 	return (
 		<div className={`slider-container ${swiperVisible ? 'visible' : 'hidden'}`}>
 			<Swiper
-				spaceBetween={80}
-				slidesPerView={3}
 				navigation={{
 					nextEl: '.swiper-button-next',
 					prevEl: '.swiper-button-prev'
 				}}
-				modules={[Navigation]}
+				pagination={{
+					clickable: true,
+					el: '.custom-pagination'
+				}}
+				modules={[Navigation, Pagination]}
+				breakpoints={{
+					0: {
+						spaceBetween: 25,
+						slidesPerView: 1.5
+					},
+					901: {
+						spaceBetween: 80,
+						slidesPerView: 3
+					}
+				}}
 				className='swiper'
 			>
 				{data[activeSlider].slides.map((item, index) => (
@@ -70,6 +86,7 @@ const Slider: FC<SliderProps> = ({ activeSlider }) => {
 					</svg>
 				</button>
 			</div>
+			<div className='custom-pagination'></div>
 		</div>
 	)
 }

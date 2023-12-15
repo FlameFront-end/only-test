@@ -1,7 +1,7 @@
 import gsap from 'gsap'
 import React, { useEffect, useRef, useState } from 'react'
 
-import { data } from '../../data.ts'
+import { data } from '../../data/data.ts'
 
 import './Circle.scss'
 
@@ -25,11 +25,6 @@ const Circle: React.FC<CircleProps> = ({ onActiveDotIndexChange }) => {
 	)
 
 	useEffect(() => {
-		setCurrentMinYear(data[activeDotIndex].minYear)
-		setCurrentMaxYear(data[activeDotIndex].maxYear)
-	}, [activeDotIndex])
-
-	useEffect(() => {
 		const circle = circleRef.current
 		const dots = dotRefs.current
 
@@ -37,7 +32,7 @@ const Circle: React.FC<CircleProps> = ({ onActiveDotIndexChange }) => {
 			const radius = 265
 			const numDots = dots.length
 			const angleIncrement = (2 * Math.PI) / numDots
-			const startingAngle = -Math.PI / 6
+			const startingAngle = -Math.PI / 3
 
 			dots.forEach((dot, index) => {
 				const angle = startingAngle + index * angleIncrement
@@ -102,6 +97,11 @@ const Circle: React.FC<CircleProps> = ({ onActiveDotIndexChange }) => {
 		return () => clearInterval(intervalId)
 	}, [minYear, currentMinYear])
 
+	useEffect(() => {
+		setCurrentMinYear(data[activeDotIndex].minYear)
+		setCurrentMaxYear(data[activeDotIndex].maxYear)
+	}, [activeDotIndex])
+
 	return (
 		<div className='center'>
 			<div ref={circleRef} className='circle'>
@@ -117,6 +117,10 @@ const Circle: React.FC<CircleProps> = ({ onActiveDotIndexChange }) => {
 						</div>
 					</div>
 				))}
+			</div>
+			<div className='year'>
+				<div className='min'>{minYear}</div>
+				<div className='max'>{maxYear}</div>
 			</div>
 			<div className='circle-bottom'>
 				<div className='count'>
@@ -162,10 +166,6 @@ const Circle: React.FC<CircleProps> = ({ onActiveDotIndexChange }) => {
 						</svg>
 					</button>
 				</div>
-			</div>
-			<div className='year'>
-				<div className='min'>{minYear}</div>
-				<div className='max'>{maxYear}</div>
 			</div>
 		</div>
 	)

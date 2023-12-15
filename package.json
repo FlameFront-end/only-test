@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix"
   },
   "dependencies": {
     "gsap": "^3.12.3",
@@ -17,18 +17,20 @@
     "swiper": "^11.0.5"
   },
   "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.2.0",
+    "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "@typescript-eslint/parser": "^6.10.0",
     "@types/gsap": "^3.0.0",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
-    "@typescript-eslint/eslint-plugin": "^6.10.0",
-    "@typescript-eslint/parser": "^6.10.0",
     "@vitejs/plugin-react": "^4.2.0",
-    "gh-pages": "^4.0.0",
     "eslint": "^8.53.0",
-    "prettier": "3.0.3",
-    "@trivago/prettier-plugin-sort-imports": "^4.2.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.4",
+    "gh-pages": "^4.0.0",
+    "prettier": "3.0.3",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard-scss": "^3.0.0",
     "typescript": "^5.2.2",
     "vite": "^5.0.0"
   }
