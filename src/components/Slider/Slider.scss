@@ -26,11 +26,12 @@
   }
 
   .custom-pagination {
+    position: absolute;
+    bottom: 32px !important;
     display: none;
     gap: 5px;
     align-items: center;
     justify-content: center;
-    margin-top: 80px;
 
     .swiper-pagination-bullet {
       width: 6px;
@@ -89,6 +90,7 @@
 
 @media screen and (max-width: 900px) {
   .slider-container {
+    position: static;
     padding: 20px 0 0;
     border-top: 1px solid #c7cdd9;
 

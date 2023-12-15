@@ -57,7 +57,7 @@
 
     .active {
       font-size: 20px;
-      background-color: #F4F5F9;
+      background-color: #f4f5f9;
       border: 1px solid #42567a;
     }
 
@@ -125,14 +125,14 @@
   }
 
   @media screen and (max-width: 760px) {
-    &::before {
-      content: none;
-    }
-
     .center {
       position: static;
       align-items: center;
       margin: 0;
+
+      &::before {
+        content: none;
+      }
 
       .year {
         position: static;
@@ -155,16 +155,16 @@
       position: absolute;
       bottom: 20px;
       left: 20px;
-      margin-left: 0;
+      margin: 0;
 
       .btn-block {
         gap: 10px;
         margin-top: 10px;
-      }
 
-      .btn {
-        width: 25px;
-        height: 25px;
+        .btn {
+          width: 25px;
+          height: 25px;
+        }
       }
     }
   }
