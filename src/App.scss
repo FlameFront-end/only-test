@@ -28,15 +28,22 @@
   }
 
   .heading {
+    position: relative;
     max-width: 353px;
     color: #42567a;
     font-weight: 700;
     font-size: 56px;
     line-height: 120%;
-  }
 
-  .top {
-    height: 100%;
+    &::before {
+      position: absolute;
+      top: 0;
+      left: -80px;
+      width: 5px;
+      height: 100%;
+      background: linear-gradient(to bottom, #3877ee, #ef5da8);
+      content: "";
+    }
   }
 
   @media screen and (max-width: 760px) {
